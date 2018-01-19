@@ -26,8 +26,10 @@
 		<button @dblclick='subtract(10)' >-10</button>
 		<button v-on:click='add(1)'>+1</button>
 		<button v-on:dblclick='add(10)'>+10</button>
-
+		<button v-on:click.once='add(50)'>+50 once</button>
 		<div id='canvas' v-on:mousemove='updateXY'> {{x}},{{y}}</div>
+
+		<a v-on:click.prevent='showAlert' href="http://www.anastasionico.uk">anastasionico.uk</a>
 	</div>
 
 	

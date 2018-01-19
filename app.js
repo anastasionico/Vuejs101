@@ -39,6 +39,9 @@ new Vue({
 		updateXY: function(e){
 			this.x = e.offsetX;
 			this.y = e.offsetY;
+		},
+		showAlert: function(){
+			alert('You clicked a link');
 		}
 	}
 });
