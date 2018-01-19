@@ -12,3 +12,33 @@ new Vue({
 		}
 	}
 });
+
+
+
+
+
+
+
+
+
+
+new Vue({
+	el: '#vue-app2',
+	data: {
+		age: 28,
+		x:0,
+		y:0,
+	},
+	methods: {
+		add: function(inc){
+			this.age += inc;
+		},
+		subtract: function(dec){
+			this.age -= dec;
+		},
+		updateXY: function(e){
+			this.x = e.offsetX;
+			this.y = e.offsetY;
+		}
+	}
+});

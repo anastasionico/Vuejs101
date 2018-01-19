@@ -11,9 +11,49 @@
 		<h1>{{ name }}</h1>
 		<h3>{{ job }}</h3>
 		<p>{{ greet('evening') }}</p>
+		<!-- v-bind:href can by shortened by using v-bind: -->
 		<a v-bind:href="anastasionico">My Website</a>
+		<a :href="anastasionico">My Website 2</a>
 		<span v-html='google'></span>
 	</div>
+
+	<hr>
+
+	<div id="vue-app2">
+		<p>My age is {{ age }}</p>
+		<!-- @click and v-on:click are the same -->
+		<button @click='subtract(1)'>-1</button>
+		<button @dblclick='subtract(10)' >-10</button>
+		<button v-on:click='add(1)'>+1</button>
+		<button v-on:dblclick='add(10)'>+10</button>
+
+		<div id='canvas' v-on:mousemove='updateXY'> {{x}},{{y}}</div>
+	</div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<script src="app.js"></script>
 </body>
 </html>
