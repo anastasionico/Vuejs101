@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vuejs 101</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>{{ name }}</h1>
+		<h3>{{ job }}</h3>
+		<p>{{ greet('evening') }}</p>
+		<a v-bind:href="anastasionico">My Website</a>
+		<span v-html='google'></span>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>
