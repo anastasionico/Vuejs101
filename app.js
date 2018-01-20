@@ -68,8 +68,22 @@ new Vue({
 new Vue({
 	el: '#vue-app3',
 	data:{
-		fancyText: ''
+		fancyText: '',
+		numberA: 0,
+		numberB: 0,
+		year: 2018,
+	},
+	computed:{
+		showDateA: function(){
+			console.log('this is showDateA');
+			return this.year + this.numberA;
+		},
+		showDateB: function(){
+			console.log('this is showDateB');
+			return this.year + this.numberB;
+		}
 	}
+
 })
 
 

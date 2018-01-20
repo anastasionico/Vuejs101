@@ -42,6 +42,16 @@
 	<div id='vue-app3'>
 		<input type="text" name="fancyText" v-model='fancyText'>
 		<span>{{ fancyText}}</span>
+		<br>
+		<button v-on:click='numberA--'>Remove 1</button>
+		<button v-on:click='numberA++'>Add 1</button>
+		<span>The number A is {{ numberA }}.</span>
+		<span>Show date A {{ showDateA }}</span>
+		<br>
+		<button v-on:click='numberB--'>Remove 1</button>
+		<button v-on:click='numberB++'>Add 1</button>
+		<span>The number B is {{ numberB }}.</span>
+		<span>Show date B {{ showDateB }}</span>
 	</div>	
 
 
