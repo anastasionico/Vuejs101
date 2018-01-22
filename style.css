@@ -5,6 +5,9 @@
 	text-align: center;
 	background-color: #800;
 }
+div{
+	margin-bottom:5rem; 
+}
 
 .available{
 	padding: 1rem;

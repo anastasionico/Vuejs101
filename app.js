@@ -86,13 +86,11 @@ new Vue({
 
 });
 
-
-
 new Vue({
 	el: '#vue-app4',
 	data: {
-		available: 'false',
-		nearby: 'false'
+		available: false,
+		nearby: false
 	},
 	computed: {
 		changeClasses: function(){
@@ -104,6 +102,16 @@ new Vue({
 	}
 });
 
+new Vue({
+	el: '#vue-app5',
+	data: {
+		error: false,
+		success: false,
+		positive: false,
+		negative: false
+		
+	}
+});
 
 
 

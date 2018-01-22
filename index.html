@@ -63,7 +63,19 @@
 		<div v-bind:class='changeClasses'>Taxi</div>
 	</div>
 
+	<hr>
 
+	<div id="vue-app5">
+		<button v-on:click='error = !error'>Troggle Error</button>
+		<button v-on:click='success = !success'>Troggle Success</button>
+		<p v-if='error'>There has been an error</p>
+		<p v-else-if='success'>This was a success</p>
+		<br>
+		<button v-on:click='positive = !positive'>Troggle positive</button>
+		<button v-on:click='negative = !negative'>Troggle negative</button>
+		<p v-show='positive'>It is positive</p>
+		<p v-show='negative'>It is negative</p>
+	</div>
 
 
 
