@@ -54,7 +54,14 @@
 		<span>Show date B {{ showDateB }}</span>
 	</div>	
 
+	<hr>
 
+	<div id="vue-app4">
+		<button v-on:click='available = !available'>Troggle Availability</button>
+		<button v-on:click='nearby = !nearby'>Troggle Nearby</button>
+		
+		<div v-bind:class='changeClasses'>Taxi</div>
+	</div>
 
 
 
@@ -81,5 +88,6 @@
 
 
 	<script src="app.js"></script>
+		
 </body>
 </html>

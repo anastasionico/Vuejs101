@@ -5,3 +5,12 @@
 	text-align: center;
 	background-color: #800;
 }
+
+.available{
+	padding: 1rem;
+	background-color:#4b4; 
+}
+.available.nearby{
+	padding: 1rem;
+	background-color:#4f4; 
+}

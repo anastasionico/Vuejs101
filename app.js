@@ -84,11 +84,25 @@ new Vue({
 		}
 	}
 
-})
+});
 
 
 
-
+new Vue({
+	el: '#vue-app4',
+	data: {
+		available: 'false',
+		nearby: 'false'
+	},
+	computed: {
+		changeClasses: function(){
+			return {
+				available: this.available,
+				nearby: this.nearby
+			}
+		}
+	}
+});
 
 
 
