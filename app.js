@@ -1,124 +1,29 @@
-new Vue({
-	el: '#vue-app',
+var one = new Vue({
+	el: '#app-vue-one',
 	data: {
-		name : 'Nico',
-		job : 'Web Developer',
-		google: '<a href="http://www.google.co.uk">Visit Google</a>',
-		anastasionico: 'http://www.anastasionico.uk'
+		title : 'This is vue One',
 	},
-	methods: {
-		greet: function (time) {
-			return 'Good ' + time + ' ' + this.name;
-		}
-	}
-});
+	methods:{
 
-
-
-
-
-
-
-
-
-
-new Vue({
-	el: '#vue-app2',
-	data: {
-		age: 28,
-		x:0,
-		y:0,
-	},
-	methods: {
-		add: function(inc){
-			this.age += inc;
-		},
-		subtract: function(dec){
-			this.age -= dec;
-		},
-		updateXY: function(e){
-			this.x = e.offsetX;
-			this.y = e.offsetY;
-		},
-		showAlert: function(){
-			alert('You clicked a link');
-		}
-	}
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-new Vue({
-	el: '#vue-app3',
-	data:{
-		fancyText: '',
-		numberA: 0,
-		numberB: 0,
-		year: 2018,
 	},
 	computed:{
-		showDateA: function(){
-			console.log('this is showDateA');
-			return this.year + this.numberA;
-		},
-		showDateB: function(){
-			console.log('this is showDateB');
-			return this.year + this.numberB;
-		}
+
 	}
+})
 
-});
-
-new Vue({
-	el: '#vue-app4',
+var two = new Vue({
+	el: '#app-vue-two',
 	data: {
-		available: false,
-		nearby: false
+		title : 'This is vue Two',
 	},
-	computed: {
-		changeClasses: function(){
-			return {
-				available: this.available,
-				nearby: this.nearby
-			}
+	methods:{
+		changeTitle: function () {
+			one.title = 'This is a new title';
 		}
-	}
-});
-
-new Vue({
-	el: '#vue-app5',
-	data: {
-		error: false,
-		success: false,
-		positive: false,
-		negative: false
+	},
+	computed:{
 		
 	}
-});
+})
 
-
-
-
-
-
-
-
-
-
+two.title = 'This has changed from outside';
