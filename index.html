@@ -7,99 +7,45 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
-	<div id="vue-app">
-		<h1>{{ name }}</h1>
-		<h3>{{ job }}</h3>
-		<p>{{ greet('evening') }}</p>
-		<!-- v-bind:href can by shortened by using v-bind: -->
-		<a v-bind:href="anastasionico">My Website</a>
-		<a :href="anastasionico">My Website 2</a>
-		<span v-html='google'></span>
-	</div>
-
-	<hr>
-
-	<div id="vue-app2">
-		<p>My age is {{ age }}</p>
-		<!-- @click and v-on:click are the same -->
-		<button @click='subtract(1)'>-1</button>
-		<button @dblclick='subtract(10)' >-10</button>
-		<button v-on:click='add(1)'>+1</button>
-		<button v-on:dblclick='add(10)'>+10</button>
-
+	<div id='app-vue'>
+		<small>this is a unordered list on an array of strings</small>
+		<ul>
+			<li v-for='team in teams'>
+				{{ team }}
+			</li>
+		</ul>
 		
-		<div id='canvas' v-on:mousemove='updateXY'> {{x}},{{y}}</div>
-		
-		<!-- v-on:click.once v-on:click.prevent are event modifier-->
-		<button v-on:click.once='add(50)'>+50 once</button>
-		<a v-on:click.prevent='showAlert' href="http://www.anastasionico.uk">anastasionico.uk</a>
-		<!-- in the line below we are calling a key event keyup and using the modifier alt and enter, they need to be pressed together in order to fire the showAlert event-->
-		<input type="text" name="pippo" v-on:keyup.alt.enter='showAlert'>
-	</div>
+		<small>this is a unordered list on an array of objects</small>
+		<ul>
+			<li v-for='character in characters'>
+				{{ character.name }} ( {{character.power}} )
+			</li>
+		</ul>
+		<small>this is a unordered list on an array of objects that retrieve the index</small>
+		<ul>
+			<li v-for='(character, index) in characters'>
+				{{index}}) {{ character.name }} ( {{character.power}} )
+			</li>
+		</ul>
 
-	<hr>
-
-	<div id='vue-app3'>
-		<input type="text" name="fancyText" v-model='fancyText'>
-		<span>{{ fancyText}}</span>
+		<small>this is a v-for using the template tag</small>
 		<br>
-		<button v-on:click='numberA--'>Remove 1</button>
-		<button v-on:click='numberA++'>Add 1</button>
-		<span>The number A is {{ numberA }}.</span>
-		<span>Show date A {{ showDateA }}</span>
+		<template v-for='character in characters'>
+			<p><b>{{ character.name }}</b>: {{ character.power}}</p> 
+		</template>
+
+		<small>this is a v-for that retrieve key and value of the objects using the template tag</small>
 		<br>
-		<button v-on:click='numberB--'>Remove 1</button>
-		<button v-on:click='numberB++'>Add 1</button>
-		<span>The number B is {{ numberB }}.</span>
-		<span>Show date B {{ showDateB }}</span>
-	</div>	
-
-	<hr>
-
-	<div id="vue-app4">
-		<button v-on:click='available = !available'>Troggle Availability</button>
-		<button v-on:click='nearby = !nearby'>Troggle Nearby</button>
-		
-		<div v-bind:class='changeClasses'>Taxi</div>
+		<template v-for='character in characters'>
+			<p v-for='(value, key) in character'>
+				{{ key }} is <b>{{value}}</b>
+			</p>
+		</template>
 	</div>
-
-	<hr>
-
-	<div id="vue-app5">
-		<button v-on:click='error = !error'>Troggle Error</button>
-		<button v-on:click='success = !success'>Troggle Success</button>
-		<p v-if='error'>There has been an error</p>
-		<p v-else-if='success'>This was a success</p>
-		<br>
-		<button v-on:click='positive = !positive'>Troggle positive</button>
-		<button v-on:click='negative = !negative'>Troggle negative</button>
-		<p v-show='positive'>It is positive</p>
-		<p v-show='negative'>It is negative</p>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 	<script src="app.js"></script>
-		
 </body>
 </html>
