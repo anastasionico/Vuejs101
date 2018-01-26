@@ -1,29 +1,23 @@
-var one = new Vue({
-	el: '#app-vue-one',
-	data: {
-		title : 'This is vue One',
-	},
-	methods:{
-
-	},
-	computed:{
-
-	}
-})
-
-var two = new Vue({
-	el: '#app-vue-two',
-	data: {
-		title : 'This is vue Two',
-	},
-	methods:{
-		changeTitle: function () {
-			one.title = 'This is a new title';
+Vue.component('newtag', {
+	template: "<p>This is my {{ name }} <button v-on:click='changeName'>Change the name</button </p>",
+	data: function () {
+		return {
+			name: 'Paperino'
 		}
 	},
-	computed:{
-		
+	methods: {
+		changeName: function () {
+			this.name = 'Topolino';
+		}
 	}
-})
+});
 
-two.title = 'This has changed from outside';
+new Vue({
+	el: '#vue-app1'
+	
+});
+
+new Vue({
+	el: '#vue-app2',	
+});
+
