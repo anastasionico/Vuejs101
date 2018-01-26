@@ -1,23 +1,11 @@
-Vue.component('newtag', {
-	template: "<p>This is my {{ name }} <button v-on:click='changeName'>Change the name</button </p>",
-	data: function () {
-		return {
-			name: 'Paperino'
-		}
+new Vue({
+	el: "#vue-app1",
+	data:{
+		name: ''
 	},
-	methods: {
-		changeName: function () {
-			this.name = 'Topolino';
+	methods:{
+		PrintName:function () {
+			this.name = this.$refs.refName.value;
 		}
 	}
 });
-
-new Vue({
-	el: '#vue-app1'
-	
-});
-
-new Vue({
-	el: '#vue-app2',	
-});
-
