@@ -17,6 +17,10 @@
   }
 </script>
 
-
+<style scoped>
+  li{ 
+    color:purple;
+  }
+</style>
 
 

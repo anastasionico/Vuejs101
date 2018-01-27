@@ -18,5 +18,9 @@
 </script>
 
 
-
+<style scoped>
+  li{ 
+    color:violet;
+  }
+</style>
 
