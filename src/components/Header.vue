@@ -1,15 +1,20 @@
 <template>
 	<header>
-		<h1>{{ title }}</h1>
+		<h1 v-on:click="title='New Title'">{{ title }}</h1>
 	</header>
 </template>
 
 
 <script>
   export default {
+    props:{
+      title:{
+        type: String
+      }
+    },
     data () {
       return {
-      	title: 'First Vuejs',
+      	// title: 'First Vuejs',
       }
     }
   }

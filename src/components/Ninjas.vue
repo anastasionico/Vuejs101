@@ -1,17 +1,21 @@
 <template>
   <ul>
-    <li v-for='ninja in ninjas' v-on:click='ninja.show = !ninja.show'>
+    <li v-for='(ninja, index) in ninjas' v-on:click='ninja.show = !ninja.show'>
       <b>{{ninja.name}}</b>
       <p v-show='ninja.show'>
         {{ninja.speciality}}
       </p>
+      <br>
+      <button v-on:click='deleteNinja(index)'>Delete</button>
     </li>
   </ul>
+
 </template>
 
 
 <script>
   export default {
+    // The data is arriving from the parent App.vue and to get is we use props
     props: {
       ninjas: {
         type: Array,
@@ -21,6 +25,11 @@
     data () {
       return {
         
+      }
+    },
+    methods:{
+      deleteNinja: function (i) {
+        this.ninjas.splice(i, 1);
       }
     }
   }

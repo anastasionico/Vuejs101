@@ -1,12 +1,18 @@
 <template>
 	<footer>
    <p>{{ copyright }}</p> 
+   <small>{{ title }}</small>
   </footer>
 </template>
 
 
 <script>
   export default {
+    props:{
+      title:{
+        type: String
+      }
+    },
     data () {
       return {
       	copyright: 'Nico Anastasio 2018'
@@ -14,10 +20,6 @@
     }
   }
 </script>
-
-
-
-
 
 
 <style scoped>

@@ -1,8 +1,10 @@
 <template>
   <div id='main'>
-    <app-header></app-header>
+    <app-header v-bind:title='title'></app-header>
     <ninja v-bind:ninjas='ninjas'></ninja>
-    <app-footer></app-footer>
+    <hr>
+    <ninja v-bind:ninjas='ninjas'></ninja>
+    <app-footer v-bind:title='title'></app-footer>
   </div>
 </template>
 
@@ -20,6 +22,7 @@
     },
     data () {
       return {
+        // ninjas it is send to Ninja.vue using v-bind and props
         ninjas: [
           {name: 'Ryu', speciality: 'Vue Components', show: false},
           {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
@@ -27,7 +30,8 @@
           {name: 'Tango', speciality: 'Conditionals', show: false},
           {name: 'Kami', speciality: 'Webpack', show: false},
           {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-        ]
+        ],
+        title: 'First Vuejs'
       }
     }
   }
