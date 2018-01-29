@@ -1,6 +1,6 @@
 <template>
   <div id='main'>
-    <app-header v-bind:title='title'></app-header>
+    <app-header v-bind:title='title' v-on:changeTitleEvent='changeTitle($newTitle)'></app-header>
     <ninja v-bind:ninjas='ninjas'></ninja>
     <hr>
     <ninja v-bind:ninjas='ninjas'></ninja>
@@ -32,6 +32,11 @@
           {name: 'Yoshi', speciality: 'Data Diggin', show: false}
         ],
         title: 'First Vuejs'
+      }
+    },
+    methods: {
+      changeTitle: function (newTitle) {
+        this.title ='New Title';
       }
     }
   }

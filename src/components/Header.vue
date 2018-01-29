@@ -1,6 +1,6 @@
 <template>
 	<header>
-		<h1 v-on:click="title='New Title'">{{ title }}</h1>
+		<h1 v-on:click="changeTitle">{{ title }}</h1>
 	</header>
 </template>
 
@@ -14,7 +14,12 @@
     },
     data () {
       return {
-      	// title: 'First Vuejs',
+      	
+      }
+    },
+    methods: {
+      changeTitle: function () {
+        this.$emit('changeTitleEvent','New Title');
       }
     }
   }
