@@ -7,6 +7,7 @@
 
 
 <script>
+  import { bus } from '../main';
   export default {
     props:{
       title:{
@@ -17,6 +18,11 @@
       return {
       	copyright: 'Nico Anastasio 2018'
       }
+    },
+    created () {
+      bus.$on('changeTitleEvent', (data) => {
+        this.title = data;
+      });
     }
   }
 </script>

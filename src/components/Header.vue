@@ -6,6 +6,8 @@
 
 
 <script>
+  import { bus } from '../main';
+
   export default {
     props:{
       title:{
@@ -19,9 +21,15 @@
     },
     methods: {
       changeTitle: function () {
-        this.$emit('changeTitleEvent','New Title');
+        // the method below sent a changeTitleEvent to the App.vue 
+        // this.$emit('changeTitleEvent','New Title');
+
+        this.title = 'New Title';
+        // the method below send the changeTitleEvent to Footer.vue via a bus instance
+        bus.$emit('changeTitleEvent','New Title');
       }
     }
+
   }
 </script>
 
