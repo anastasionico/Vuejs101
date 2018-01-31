@@ -31,7 +31,28 @@
       deleteNinja: function (i) {
         this.ninjas.splice(i, 1);
       }
-    }
+    },
+    //livecycle hooks
+    // beforeCreate(){
+    //   alert('beforeCreate');
+    // }, 
+    // created(){
+    //   alert('created');
+    // }, 
+    // beforeMount(){
+    //   alert('beforeMount');
+    // }, 
+    // mounted(){
+    //   alert('mounted');
+    // }, 
+    // beforeUpdate(){
+    //   alert('beforeUpdate');
+    // }, 
+    // updated(){
+    //   alert('updated');
+    // }, 
+    
+
   }
 </script>
 
