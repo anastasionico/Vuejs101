@@ -1,56 +1,43 @@
 <template>
-  <div id='main'>
-    <app-header v-bind:title='title' v-on:changeTitleEvent='changeTitle($newTitle)'></app-header>
-    <ninja v-bind:ninjas='ninjas'></ninja>
-    <hr>
-    <ninja v-bind:ninjas='ninjas'></ninja>
-    <app-footer v-bind:title='title'></app-footer>
-  </div>
+  <formTemplate>
+    
+      <div slot='form-header'>
+        <h1>Hello form</h1>
+      </div>
+      <div slot='form-fields'>
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+      </div>
+      <div slot='form-controls'>
+        <button v-on:click='submit'>Submit</button>
+      </div>    
+    
+  </formTemplate>
 </template>
 
 
 <script>
-  import Header from './components/Header.vue';
-  import Ninja from './components/Ninjas.vue';
-  import Footer from './components/Footer.vue';
-
+  import FormTemplate from './components/FormTemplate'
+  
   export default {
-    components:{
-      'app-header': Header,
-      'ninja': Ninja,
-      'app-footer': Footer
+    components: {
+      'formTemplate' : FormTemplate
     },
     data () {
       return {
-        // ninjas it is send to Ninja.vue using v-bind and props
-        ninjas: [
-          {name: 'Ryu', speciality: 'Vue Components', show: false},
-          {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-          {name: 'Hitoshi', speciality: 'Click Events', show: false},
-          {name: 'Tango', speciality: 'Conditionals', show: false},
-          {name: 'Kami', speciality: 'Webpack', show: false},
-        ],
-        title: 'First Vuejs'
+
       }
     },
-    methods: {
-      changeTitle: function (newTitle) {
-        this.title ='New Title';
+    methods:{
+      submit:function () {
+        console.log('hello');
       }
     }
+
+    
   }
 </script>
 
-
-
-
-
-
-<style>
-  #main{
-    padding: 0;
-    margin: 0;
-  }
-  
+<style scoped>
   
 </style>
